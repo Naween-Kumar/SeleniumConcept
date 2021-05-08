@@ -8,7 +8,9 @@ public class LaunchChromDriver {
 
 		a.setUp();
 		a.getTitle();
-		a.tearDown();
+
+		a.login();
+		//a.tearDown();
 
 	}
 
