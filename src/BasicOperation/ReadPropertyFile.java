@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class ReadPropertyFile {
 
@@ -25,7 +26,8 @@ public class ReadPropertyFile {
 		if (p.getProperty("browser").equals("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", "J:\\browserDrivers\\chromedriver.exe");
-			driver = new ChromeDriver();
+			//driver = new ChromeDriver();
+			driver = new HtmlUnitDriver();
 
 		}
 
@@ -46,6 +48,7 @@ public class ReadPropertyFile {
 		driver.manage().window().maximize();
 		driver.get(p.getProperty("url"));
 		Thread.sleep(10000);
+		System.out.println(driver.getTitle());
 		driver.quit();
 
 	}
